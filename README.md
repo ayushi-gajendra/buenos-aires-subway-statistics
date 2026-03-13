@@ -1,5 +1,11 @@
 # 🚉 Urban Mobility: Buenos Aires Subway Ridership Analysis
 
+![Urban Analytics](https://img.shields.io/badge/Analysis-Descriptive%20Statistics-red?style=for-the-badge)
+![Domain](https://img.shields.io/badge/Domain-Urban%20Mobility-blue?style=for-the-badge)
+![Method](https://img.shields.io/badge/Method-Quantile%20Filtering-orange?style=for-the-badge)
+![Tools](https://img.shields.io/badge/Tools-Python%20%26%20Pandas-success?style=for-the-badge&logo=python&logoColor=white)
+
+
 ## 📌 Project Overview
 
 This project investigates public transportation accessibility and efficiency in Buenos Aires, Argentina. Using Python and the **pandas** library, the analysis identifies peak usage patterns, defines high-traffic thresholds using statistical quantiles, and compares performance across the city's subway network (*Subte*).
@@ -31,12 +37,13 @@ The foundation of the project focuses on the **Pueyrredón Station (Line D)**, e
 * **Step 4: Distribution Analysis:** Generating a histogram of total passenger counts.
   * **Strategic Logic:** Setting `bins=24` creates a visual "pulse" of the day. This reveals a **skewed distribution**, showing that while the station is quiet most of the time, it handles intense, short-lived spikes during commute hours.
 
-#### Ridership Distribution
+
+* #### Visualisation: Distribution
 
 ![Total Ridership](images/pax_distribution.png)
 
 
-#### Summary of Histogram:
+* #### Summary of Histogram:
   * **Purpose:** The chart shows that most recorded hours had relatively low passenger counts (tall bars on the left), while high-traffic peak moments were much less frequent. It groups the number of passengers into ranges (called **bins**) to show the overall distribution of ridership rather than individual data points.
   * **X-Axis (Horizontal):** Represents the **volume of passengers** per hour. The left side shows low numbers (quiet periods), and the right side shows high numbers (rush hour).
   * **Y-Axis (Vertical):** Represents the **frequency**, or how many hours in the dataset fell into those specific passenger ranges.
@@ -58,12 +65,13 @@ In this phase, we expand the analysis to the entire city network to identify whe
 * **Step 4: Rush Hour Identification:** Plotting the `hour` feature for the busiest subset.
   * **The Insight:** The analysis identified a critical afternoon rush window between **16:00 and 18:00**, pinpointing 6 specific stations that require the most attention during these hours.
 
-#### Peak Traffic by Hour
+
+* #### Visualisation: Peak Traffic by Hour
 
 ![Rush Hour Peaks](images/rush_hour_peaks.png)
 
 
-#### Summary of Histogram:
+* #### Summary of Histogram:
   * **Purpose:**  By focusing on the top 500 records, we identify the specific times of day that consistently produce the highest passenger volumes.
   * **X-Axis (Horizontal):** Represents the **hour of the day** (from 0 to 23). By using **24 bins**, each bar represents exactly one hour of a full day cycle.
   * **Y-Axis (Vertical):** Represents the **frequency** of extreme events. It counts how many times a specific hour appeared in the list of the 500 most crowded records.
@@ -83,15 +91,16 @@ The final phase models the system's behavior under "extreme conditions" to help 
 * **Step 3: Plotting Station Counts:** Generating a bar chart of the stations most frequently appearing in the 95th percentile. This identifies which stations are the "consistent outliers" in the system.
   * **The Findings:** This chart highlights the **Critical Hubs**. Even if many stations are busy, a few specific stations (like Constitución) will have significantly taller bars. This tells stakeholders exactly where to prioritize physical infrastructure upgrades, such as wider platforms or additional turnstiles.
 
-#### Top Station Analysis
+* #### Visualisation: Top Station Analysis
 
 ![Top Stations](images/top_stations_bar.png)
 
 
-#### Summary of Histogram:
+* #### Summary of Histogram:
   * **Purpose:** It isolates the stations that most frequently exceed the **95th percentile ridership threshold**.
   * **X-Axis (Horizontal):** Lists the **Subway Stations**. Usually, this is limited to the "Top 10" to keep the visual clear and actionable.
   * **Y-Axis (Vertical):** Represents the **event count**. It shows how many times that specific station experienced a "95th percentile" traffic event during the month.
+
 
 * **Step 4: Statistics per Station:** Calculating the mean ridership segmented by individual station to identify the average "peak load" per location.
 
@@ -142,6 +151,12 @@ This project demonstrates a professional transition from the visible grids of sp
 1. Clone this repository.
 2. Install dependencies: `pip install pandas matplotlib`.
 3. Open `Buenos Aires Subway.ipynb` and run the cells sequentially.
+
+---
+
+## 🎓 Project Credits
+
+This analysis was developed as part of the **Applied Statistics for Data Analytics** course by **DeepLearning.AI** on Coursera. It focuses on using discrete distributions to solve predictive problems in media and entertainment.
 
 ---
 
