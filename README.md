@@ -30,12 +30,15 @@ The foundation of the project focuses on the **Pueyrredón Station (Line D)**, e
 
 * **Step 1: Data Ingestion:** Importing raw CSV data into a **Pandas DataFrame**. This leverages **vectorized operations**, allowing for mathematical calculations across the entire dataset simultaneously.
 
-* **Step 2: Dataset Inspection:** Utilizing methods like `.info()` and `.describe()` to perform a data audit, ensuring type consistency and identifying any null values.
+* **Step 2: Dataset Inspection:** Utilizing method like `.info()` to perform a data audit, ensuring type consistency and identifying any null values.
 
 * **Step 3: Feature Selection:** Simplifying the dataset by selecting specific columns (`datetime`, `pax_total`, etc.) and removing redundant features to optimize memory usage.
 
-* **Step 4: Distribution Analysis:** Generating a histogram of total passenger counts.
-  * **Strategic Logic:** Setting `bins=24` creates a visual "pulse" of the day. This reveals a **skewed distribution**, showing that while the station is quiet most of the time, it handles intense, short-lived spikes during commute hours.
+* **Step 4: Revenue & Payment Analysis:** Calculating column-wide sums to quantify how different payment types (full fare vs. discounts/passes) contribute to the total ridership.
+    * **Strategic Logic:** This identifies the revenue impact of discounted rates for that month, translating transit volume into financial insights.
+
+* **Step 5: Distribution Analysis:** Generating a histogram of total passenger counts.
+    * **Strategic Logic:** Using **`bins=40`** allows for a granular look at the data. This reveals a **skewed distribution**, showing that while the station is quiet most of the time, it handles intense, short-lived spikes during commute hours.
 
 
 * #### Visualisation: Distribution
@@ -44,10 +47,11 @@ The foundation of the project focuses on the **Pueyrredón Station (Line D)**, e
 
 
 * #### Summary of Histogram:
-  * **Purpose:** The chart shows that most recorded hours had relatively low passenger counts (tall bars on the left), while high-traffic peak moments were much less frequent. It groups the number of passengers into ranges (called **bins**) to show the overall distribution of ridership rather than individual data points.
-  * **X-Axis (Horizontal):** Represents the **volume of passengers** per hour. The left side shows low numbers (quiet periods), and the right side shows high numbers (rush hour).
-  * **Y-Axis (Vertical):** Represents the **frequency**, or how many hours in the dataset fell into those specific passenger ranges.
-  * **The Findings:** The chart typically shows a **skewed distribution**. This means that most recorded hours had relatively low passenger counts (tall bars on the left), while the high-traffic peak moments were much less frequent (short bars on the right).
+
+    * **Purpose:** The chart shows that most recorded hours had relatively low passenger counts, while high-traffic peak moments were much less frequent. It groups the passengers into **40 specific ranges (bins)** to provide a detailed view of ridership density.
+    * **X-Axis (Horizontal):** Represents the **volume of passengers** per hour. The left side shows quiet periods, while the right side shows extreme rush hour peaks.
+    * **Y-Axis (Vertical):** Represents the **frequency**, or how many hours in the dataset fell into those specific passenger ranges.
+    * **The Findings:** The data shows a **right-skewed distribution**. Most hours fall in the lower volume range (tall bars on the left), confirming that the subway system operates at "extreme load" for only a small percentage of its total operating time.
 
 
 ---
