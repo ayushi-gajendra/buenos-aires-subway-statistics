@@ -160,7 +160,7 @@ This project demonstrates a professional transition from the visible grids of sp
 
 ## 🎓 Project Credits
 
-This analysis was developed as part of the **Applied Statistics for Data Analytics** course by **DeepLearning.AI** on Coursera. It focuses on using discrete distributions to solve predictive problems in media and entertainment.
+This analysis was developed as part of the **Python for Data Analytics** course by **DeepLearning.AI** on Coursera. It focuses on using discrete distributions to solve predictive problems in media and entertainment.
 
 ---
 
